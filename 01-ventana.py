@@ -69,3 +69,7 @@ programa = Programa()
 programa.cargar()
 programa.addTexto('esto es un texto')
 programa.mostrar()
+
+#para que mi programa se ejecute con un doble click hay que cambiar su extencion a pyw
+#esto quiere decir que se abra en modo de ventana (windows)
+
