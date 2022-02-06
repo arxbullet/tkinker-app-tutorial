@@ -1,5 +1,4 @@
 from tkinter import *
-from turtle import width 
 ventana = Tk()
 
 ventana.title('trabajando con formularios')
