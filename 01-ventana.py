@@ -4,35 +4,55 @@
 from tkinter import * 
 import os.path 
 
-#crear la ventana raiz
+#crear clase para el programa(molde para crear distintas ventanas y paginas)
 
-ventana = Tk()
+class Programa:
 
-#cambio del tamaño de la ventana
-ventana.geometry('750x750')
+    def __init__(self ):
+        self.title = 'app de tinker'
+        self.icon = './imagenes/piton.ico'
+        self.size = '700x500'
+        self.resiable = False
+        
+    def cargar (self):
 
-#bloquear tamaño ventana
+        #crear la ventana raiz
 
-ventana.resizable(1,0) #los dos argumentos son ancho y alto
+        ventana = Tk()
 
+        #cambio del tamaño de la ventana
+        ventana.geometry(self.size)
 
-#ponerle imagen a la ventana(logotipo), debe ser en .ico
+        #bloquear tamaño ventana
+        
+        if self.resiable : 
+            ventana.resizable(1,1) #los dos argumentos son ancho y alto
 
-ventana.iconbitmap('./imagenes/piton.ico')
+        else: 
+            ventana.resizable(0,0)
 
-#ponerle titulo a la ventana
+        #ponerle imagen a la ventana(logotipo), debe ser en .ico
 
-ventana.title('app de tkinker')
+        ventana.iconbitmap(self.icon)
 
-#comprobar ruta absoluta
+        #ponerle titulo a la ventana
 
-ruta = os.path.abspath('./imagenes/piton.ico')
+        ventana.title(self.title)
 
-#mostrar texto en el programa
-texto = Label(ventana, text=ruta)
-texto.pack()
+        #comprobar ruta absoluta
 
-#arrancaar y mostrar la ventana hasta que yo decida cerrarla
-#este metodo debe ser el ultimo 
+        ruta = os.path.abspath('./imagenes/piton.ico')
 
-ventana.mainloop() 
+        #mostrar texto en el programa
+        texto = Label(ventana, text=ruta)
+        texto.pack()
+
+        #arrancaar y mostrar la ventana hasta que yo decida cerrarla
+        #este metodo debe ser el ultimo 
+
+        ventana.mainloop() 
+
+#instanciar mi programa
+
+programa = Programa()
+programa.cargar()
