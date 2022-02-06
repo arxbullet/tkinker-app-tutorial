@@ -60,7 +60,7 @@ class Programa:
 
     def mostrar(self):
         #mostrar texto en el programa
-        self.ventana.mainloop
+        self.ventana.mainloop()
 
 
 #instanciar mi programa
