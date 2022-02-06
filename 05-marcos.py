@@ -41,6 +41,18 @@ marcoHijo .config(
     relief='solid'
 )
 
+#poner texto en el centro con heigh y width
+marcoChiquito = Label(marcoHijo, text='marco chiquito')
+marcoChiquito.config(
+    bg= 'blue',
+    bd=1,
+    font = ('Arial', 10),
+    fg='white',
+    height=10,
+    width=10,
+)
+marcoChiquito.pack(anchor=CENTER)
 marcoHijo.pack(side=TOP, anchor=CENTER)
+marcoHijo.pack_propagate(False)
 
 ventana.mainloop()
