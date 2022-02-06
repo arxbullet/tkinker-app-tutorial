@@ -19,6 +19,7 @@ class Programa:
         #crear la ventana raiz
 
         ventana = Tk()
+        self.ventana = ventana
 
         #cambio del tamaño de la ventana
         ventana.geometry(self.size)
@@ -50,9 +51,21 @@ class Programa:
         #arrancaar y mostrar la ventana hasta que yo decida cerrarla
         #este metodo debe ser el ultimo 
 
-        ventana.mainloop() 
+       # ventana.mainloop() 
+
+    def addTexto(self, text):
+        #mostrar texto en el programa
+        texto = Label(self.ventana, text=text)
+        texto.pack()
+
+    def mostrar(self):
+        #mostrar texto en el programa
+        self.ventana.mainloop
+
 
 #instanciar mi programa
 
 programa = Programa()
 programa.cargar()
+programa.addTexto('esto es un texto')
+programa.mostrar()
