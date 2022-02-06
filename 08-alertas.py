@@ -1,4 +1,3 @@
-from email import message
 from tkinter import *
 from tkinter import messagebox  as MessageBox
 ventana = Tk()
